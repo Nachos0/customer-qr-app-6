@@ -202,3 +202,28 @@ textarea {
   justify-content: center;
   height: calc(100vh - 80px); /* Use viewport height */
 }
+
+/* Print Styles */
+@media print {
+  body * {
+    visibility: hidden; /* Hide everything by default */
+  }
+  #print-area, #print-area * {
+    visibility: visible; /* Make the print area and its children visible */
+  }
+  #print-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+    .qr-container > div {
+     margin: 0px;
+    }
+  .print-button, .done-button {
+    display: none; /* Hide the buttons when printing */
+  }
+}
